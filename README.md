@@ -21,6 +21,7 @@ poetry shell
 streamlit run app_pt.py
 ```
 
+
 ## Deploy eng
 ```python
 poetry env use python3.10
