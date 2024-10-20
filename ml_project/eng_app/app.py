@@ -62,7 +62,7 @@ if __name__ == '__main__':
         final_value = real_value * dolar_times
 
         result = f"""For a {int(diametro)} diameter pizza the price is $ {round(final_value,2)}  dollars
-        Real x Dolar: {dolar_times} for date {create_date}"""
+        Real x Dolar: {dolar_times} at {create_date}"""
         st.markdown(
         f"""
         <div style="text-align: center; font-size: 24px;">
