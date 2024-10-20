@@ -2,6 +2,7 @@
 
 The project uses the scikit-learn lib to train a data set containing diameter and pizza value. After training the data, it is possible to predict the pizza value from the diameter. Linear regression was used for training.
 Streamlit was used for the front end, making it possible to interact directly with the model, passing the diameter and receiving the expected result.
+To convert real into dolar this project uses API https://economia.awesomeapi.com.br/json/daily/USD-BRL/1 for last variation getting current dolar value.
 
 ### Front/Streamlit
 

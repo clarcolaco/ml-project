@@ -1,13 +1,21 @@
 import streamlit as st
 import pandas as pd
 from sklearn import linear_model
+import requests
 
 
 if __name__ == '__main__':
+    
+    st.set_page_config(
+    page_title="Predict - Pizza price",  # Título da aba do navegador
+    page_icon="🍕",  # Ícone da aba do navegador
+    layout="centered",  # Define o layout da página (wide ou centered)
+    )
     df = pd.read_csv('./eng_app/pizzas.csv')
 
     modelo =  linear_model.LinearRegression()
-
+   
+    
     #### dados de treino
     x = df[["diametro"]]
     y = df[["preco"]]
@@ -37,7 +45,22 @@ if __name__ == '__main__':
     diametro = st.number_input("Enter the desired diameter size to get the pizza price")
     if diametro:
         preco_previsto = modelo.predict([[diametro]])
-        result = f'For a {int(diametro)} diameter pizza the price is $ {round(float(preco_previsto[0][0]),2)}  dollars'
+        # The API endpoint
+        url = "https://economia.awesomeapi.com.br/json/daily/USD-BRL/1"
+
+        # A GET request to the API
+        response = requests.get(url)
+
+        # Print the response
+        response_json = response.json()
+
+        real_value = float(preco_previsto[0][0])
+
+        dolar_times = float(response_json[0]["ask"])
+
+        final_value = real_value * dolar_times
+
+        result = f'For a {int(diametro)} diameter pizza the price is $ {round(final_value,2)}  dollars'
         st.markdown(
         f"""
         <div style="text-align: center; font-size: 24px;">

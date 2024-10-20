@@ -4,6 +4,11 @@ from sklearn import linear_model
 
 
 if __name__ == '__main__':
+    st.set_page_config(
+    page_title="Previsão - Preço da pizza",  # Título da aba do navegador
+    page_icon="🍕",  # Ícone da aba do navegador
+    layout="centered",  # Define o layout da página (wide ou centered)
+    )
     df = pd.read_csv('./pt_app/pizzas.csv')
 
     modelo =  linear_model.LinearRegression()
