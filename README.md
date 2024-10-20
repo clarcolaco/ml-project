@@ -34,3 +34,9 @@ poetry add requirements.txt
 poetry shell
 streamlit run app.py
 ```
+
+## Deploy docker
+
+```shell
+docker-compose up --build
+```
