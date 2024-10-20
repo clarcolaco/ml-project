@@ -57,10 +57,12 @@ if __name__ == '__main__':
         real_value = float(preco_previsto[0][0])
 
         dolar_times = float(response_json[0]["ask"])
+        create_date = response_json[0]["create_date"]
 
         final_value = real_value * dolar_times
 
-        result = f'For a {int(diametro)} diameter pizza the price is $ {round(final_value,2)}  dollars'
+        result = f"""For a {int(diametro)} diameter pizza the price is $ {round(final_value,2)}  dollars
+        Real x Dolar: {dolar_times} for date {create_date}"""
         st.markdown(
         f"""
         <div style="text-align: center; font-size: 24px;">
