@@ -20,7 +20,7 @@ Para o front foi utilizado o streamlit, sendo possivel interagir direto com o mo
 
 ```python
 poetry env use python3.11
-poetry add requests.txt
+poetry add requirements.txt
 poetry shell
 streamlit run app_pt.py
 ```
@@ -29,7 +29,7 @@ streamlit run app_pt.py
 
 ```python
 poetry env use python3.11
-poetry add requests.txt
+poetry add requirements.txt
 poetry shell
 streamlit run app.py
 ```
