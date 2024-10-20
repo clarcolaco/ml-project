@@ -67,8 +67,8 @@ if __name__ == '__main__':
         st.markdown(
         f"""
         <div style="text-align: center; font-size: 24px;">
-            {result}<br><br>
-            {dolar_msg}
+            {result}<br>
+            {dolar_msg}<br>
         </div>
         """, 
         unsafe_allow_html=True
