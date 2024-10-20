@@ -1,0 +1,22 @@
+services:
+  streamlit_pt:
+    container_name : "streamlit_for_ml_pt"
+    build:
+      dockerfile: ./ml_project/pt_app/Dockerfile
+      context: ./
+    ports:
+      - '8502:8502'
+    volumes:
+      - ./ml_project/pt_app:/pt_app
+    command: streamlit run ./pt_app/app_pt.py --server.port 8502
+
+  streamlit_eng:
+    container_name : "streamlit_for_ml_eng"
+    build:
+      dockerfile: ./ml_project/eng_app/Dockerfile
+      context: ./
+    ports:
+      - '8501:8501'
+    volumes:
+      - ./ml_project/eng_app:/eng_app
+    command: streamlit run ./eng_app/app.py --server.port 8501
